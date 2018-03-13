@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% block head_title %}Welcome | {{ block.super }}{% endblock %}
+<style>
+{% block style %}
+	.navbar-static-top {
+		margin-bottom: 0px !important;
+	}
+	.jumbotron {
+		background-color:#0E3D14;
+		color: #FFF;
+	}
+
+{% endblock %}
+</style>
+
+{% block jumbotron %}
+		{% if featured_image %}
+			<div class="jumbotron">
+				<div class="container">
+					<div class="row">
+						
+							<section id="top-section" class="homepage_style_1 fitScreen section-homepage-layout-35 parallax-on">
+                <div class="parallax-window home-image-bg" data-parallax="scroll" data-bleed="30" data-idele="parallax_home_opacity" data-opacity="0.5" data-backgroundcolor="#333333" data-image-src="img/2000_5a254aeb46abb.jpg"></div>
+                <div class="homepage-layout-24 homepage-layout-35 container"><h1 id="home_siteSlogan" class="weight700">Welcome To Mavuno online shop</h1><h2 id="home_siteSlogan_2" class="weight400">Join us today and enjoy our discounts!</h2>
+                   
+                </div>
+            </section>
+							
+							
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		{% endif %}
+	{% endblock %}
+	
+
+	{% block content %}
+		{% if products %}
+		   <div class="container">
+		   	       <section>
+
+		   	
+		   		<header class="header-main-wrapper js-sticky-header"><div class="osh-container header-main"><nav id="menuFixed" class="menu -flyout"><a class="navAllCat"><i class="osh-font-burger"></i> <span class="title"><span class="label">All</span> <span class="sub-label">Categories</span> <i class="caret osh-font-light-arrow-down"></i></span></a><ul class="menu-items"><div class="arrow-border"></div> <li class="menu-item" data-id=""><a href="https://www.jumia.co.ke/mobile-phones/" class="main-category">  <i class="cat-icon osh-font-mobile"></i> <span class="nav-subTxt">Phones & Tablets</span> <i class="osh-font-light-arrow-left"></i><i class="osh-font-light-arrow-right"></i>  </a> <div class="navLayerWrapper"><div class="submenu"><div class="column"><div class="categories"><a class="category" href="https://www.jumia.co.ke/mobile-phones/">Mobile Phones</a>   <a class="subcategory" href="https://www.jumia.co.ke/smartphones/">Smartphones</a>   
+		   		
+		   	</section>
+		   </div>
+
+			<h3> Recommended products </h3>
+			{% include "products/products.html" with object_list=products%}
+		{% endif %}
+
+	{% endblock %}
+	
